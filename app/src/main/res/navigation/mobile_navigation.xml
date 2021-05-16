@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_example"
+        android:name="com.example.temperature_humidity.ui.registerroom.ExampleFragment"
+        android:label="@string/title_example"
+        tools:layout="@layout/fragment_example"/>
+
+
+    <fragment
+        android:id="@+id/navigation_lookuproom"
+        android:name="com.example.temperature_humidity.ui.historyactivity.LookUpRoomFragment"
+        android:label="@string/title_hitoryactivity"
+        tools:layout="@layout/fragment_lookuproom"
+        >
+        <action
+            android:id="@+id/to_historycontent"
+            app:destination="@id/navigation_HistoryActivity"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_HistoryActivity"
+        android:name="com.example.temperature_humidity.ui.historyactivity.HistoryActivityFragment"
+        android:label="@string/title_hitoryactivity"
+        tools:layout="@layout/fragment_history"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_lookupbuilding"
+        android:name="com.example.temperature_humidity.ui.historyactivity.LookUpBuildingFragment"
+        android:label="@string/title_hitoryactivity"
+        tools:layout="@layout/fragment_lookupbuilding"
+        >
+        <action
+            android:id="@+id/to_lookuproom"
+            app:destination="@id/navigation_lookuproom"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_lookupdate"
+        android:name="com.example.temperature_humidity.ui.historyactivity.LookUpDateFragment"
+        android:label="@string/title_hitoryactivity"
+        tools:layout="@layout/fragment_lookupdate"
+        >
+        <action
+            android:id="@+id/to_lookupbuilding"
+            app:destination="@id/navigation_lookupbuilding"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_roomtime"
+        android:name="com.example.temperature_humidity.ui.registerroom.RoomTimeFragment"
+        android:label="@string/title_registerroom"
+        tools:layout="@layout/fragment_roomtime"/>
+
+    <fragment
+        android:id="@+id/navigation_selectroom"
+        android:name="com.example.temperature_humidity.ui.registerroom.SelectRoomFragment"
+        android:label="@string/title_registerroom"
+
+        tools:layout="@layout/fragment_selectroom" >
+        <action
+            android:id="@+id/to_room_time"
+            app:destination="@id/navigation_roomtime" />
+        </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registerroom"
+        android:name="com.example.temperature_humidity.ui.registerroom.RegisterRoomFragment"
+        android:label="@string/title_registerroom"
+        tools:layout="@layout/fragment_registerroom"
+        >
+        <action
+            android:id="@+id/to_select_room"
+            app:destination="@id/navigation_selectroom" />
+        <action
+            android:id="@+id/to_example"
+            app:destination="@id/navigation_example"/>
+    </fragment>
+
+    <activity
+        android:id="@+id/navigation_login"
+        android:name="com.example.temperature_humidity.LoginActivity"
+        tools:layout="@layout/activity_login"
+        />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.temperature_humidity.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/to_register_room"
+            app:destination="@id/navigation_registerroom"/>
+
+        <action
+            android:id="@+id/to_lookupdate"
+            app:destination="@id/navigation_lookupdate"
+            >
+
+        </action>
+
+        <action
+            android:id="@+id/to_log_in"
+            app:destination="@id/navigation_login"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.temperature_humidity.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/profile_to_editprofile"
+            app:destination="@id/navigation_editprofile"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.temperature_humidity.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_editprofile"
+        android:name="com.example.temperature_humidity.ui.profile.EditProfileFragment"
+        android:label="@string/title_editprofile"
+        tools:layout="@layout/fragment_editprofile">
+        <action
+            android:id="@+id/editprofile_to_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+
+
+</navigation>
